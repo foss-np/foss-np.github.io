@@ -5,8 +5,8 @@ fossnp.config(function($routeProvider) {
 });
 
 function mainCtrl($scope, $rootScope, $http, $route, $location, $routeParams){
-	$http.get('https://api.github.com/orgs/foss-np/repos').success(function(data){
-		$rootScope.repos = data;
+	$http.jsonp('https://api.github.com/orgs/foss-np/repos?callback=JSON_CALLBACK').success(function(data){
+		$rootScope.repos = data.data;
 	});
 	$scope.$route = $route;
 	$scope.$location = $location;
@@ -14,8 +14,7 @@ function mainCtrl($scope, $rootScope, $http, $route, $location, $routeParams){
 }
 
 function repoCtrl($scope, $http, $routeParams){
-	console.log('hello World');
-	$http.get('https://api.github.com/repos/'+$routeParams.owner+'/'+$routeParams.repo+'/contributors').success(function(data){
-		$scope.contributors = data;
+	$http.jsonp('https://api.github.com/repos/'+$routeParams.owner+'/'+$routeParams.repo+'/contributors?callback=JSON_CALLBACK').success(function(data){
+		$scope.contributors = data.data;
 	});
 }

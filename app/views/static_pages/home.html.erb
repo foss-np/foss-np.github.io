@@ -1,5 +1,98 @@
-<h1>FOSS Nepal</h1>
-<p>
-  This is the home page for the
-  <a href="http://fossnepal.heroku.com">FOSS Nepal</a>.
-</p>
+<div class="jumbotron masthead">
+  <div class="container">
+	 <h1>FOSS Nepal</h1>
+	 <p>
+      FOSS Nepal Community is a team of volunteers who believe in the usage of <%= link_to "Free/Open Source Software (FOSS)", "http://en.wikipedia.org/wiki/Free_and_open_source_software", :target => "_blank" %>.
+    </p>
+   <p>
+	   <%= link_to "Donate to FOSS Nepal", "#", class: "btn btn-primary btn-large" %>
+	 </p>
+   <ul class="masthead-links">
+      <li>
+      	<%= link_to "Products", "#" %>
+      </li>
+      <li>
+        <%= link_to "Trainings", "#" %>
+      </li>
+      <li>
+       <%= link_to "Career", "#" %>
+      </li>
+      <li>
+        Learn
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="bs-docs-social">
+  <div class="container">
+    <ul class="bs-docs-social-buttons">
+      <li class="socials">
+        <g:plusone annotation="inline" width="150"></g:plusone>
+      </li>
+      <li class="socials">  
+        <div class="fb-like" data-href="https://www.facebook.com/nosklub" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
+        <div id="fb-root"></div>
+      </li>
+      <li class="follow-btn">
+        <%= link_to "Follow @fossnepal", "https://twitter.com/fossnepal", :class=>"twitter-follow-button", :data=>{:'link-color'=>"#0069D6", :'show-count'=>"true"} %>
+      </li>
+      <li class="tweet-btn">
+        <%= link_to "Tweet", "https://twitter.com/share", :class=>"twitter-share-button", :data=>{:url=>"https://fossnepal.herokuapp.com", :count=>"horizontal", :via=>"fossnepal", :related=>"mdo:Creator of FOSS Nepal"} %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="marketing">
+
+    <h1>Welcome to FOSS Nepal.</h1>
+    <p class="marketing-byline">The primary objective of the community is to promote and diversify the usage of Free/Open Source Software in Nepal.</p>
+
+    <div class="row-fluid">
+      <div class="span3">
+        <%= image_tag("fossnepal-dummy.png", :alt=>"Objectives", :class=> "marketing-img")%>
+        <h2>Raising awareness.</h2>
+        <p>Raise awareness among general public, government bodies, private sector, civil society, educational institutions and media for expanding the scope of Information and Communication Technology (ICT) via Free and Open Source Software.</p>
+      </div>
+      <div class="span3">
+        <%= image_tag("fossnepal-dummy.png", :alt=>"Objectives", :class=> "marketing-img")%>
+        <h2>Helping E-governance.</h2>
+        <p>Sensitize general public, government bodies, civil society and media for the implementation of e-governance by means of FOSS; the optimal solution for e-governance.</p>
+      </div>
+      <div class="span3">
+        <%= image_tag("fossnepal-dummy.png", :alt=>"Objectives", :class=> "marketing-img")%>
+        <h2>Fighting for the rights.</h2>
+        <p>Advocacy for alternatives in Intellectual Property Rights (IPR) specific to ICT.</p>
+      </div>
+      <div class="span3">
+        <%= image_tag("fossnepal-dummy.png", :alt=>"Objectives", :class=> "marketing-img")%>
+        <h2>From good to best.</h2>
+        <p>Enhance the capacity of IT professionals by promoting inclusion of Free and Open Source Software in educational system and providing platform for IT professionals to make them globally salable.</p>
+      </div>
+    </div>
+
+    <hr class="soften">
+    <h1>Built with FOSS Nepal.</h1>
+    <p class="marketing-byline">For even more accomplishments from FOSS Nepal, browse the <%= link_to "Products", "#" %>.</p>
+    <div class="row-fluid">
+      <ul class="thumbnails example-sites">
+        <li class="span3">
+          <%= link_to image_tag("fossnepal-dummy.png", :alt=>"Examples"), "http://fossnepal.herokuapp.com", :target => "_blank" %>
+        </li>
+        <li class="span3">
+          <%= link_to image_tag("fossnepal-dummy.png", :alt=>"Examples"), "http://fossnepal.herokuapp.com", :target => "_blank" %>
+        </li>
+        <li class="span3">
+          <%= link_to image_tag("fossnepal-dummy.png", :alt=>"Examples"), "http://fossnepal.herokuapp.com", :target => "_blank" %>
+        </li>
+        <li class="span3">
+          <%= link_to image_tag("fossnepal-dummy.png", :alt=>"Examples"), "http://fossnepal.herokuapp.com", :target => "_blank" %>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>  

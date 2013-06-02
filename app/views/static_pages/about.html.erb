@@ -1,5 +1,53 @@
 <% provide(:title, 'About Us') %>
-<h1>About Us</h1>
-<p>
-  About Page
-</p>
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>About Us</h1>
+    <p class="lead">Overview of the FOSS Nepal Community</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav">
+        <li>
+        	<%= link_to '#history' do %>
+         		<i class="icon-chevron-right"></i> History
+         	<% end %>
+        </li>
+        <li>
+          <%= link_to '#prominent-persons' do %>
+            <i class="icon-chevron-right"></i> Prominent Persons
+          <% end %>
+        </li>
+        <li>
+          <%= link_to '#communities' do %>
+            <i class="icon-chevron-right"></i> Communities
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="span9">
+      <section id="history">
+        <div class="page-header">
+          <h1>History</h1>
+        </div>
+        <p class="lead">History of FOSS Nepal</p>
+      </section>
+
+      <section id="prominent-persons">
+        <div class="page-header">
+          <h1>Prominent Persons</h1>
+        </div>
+        <p class="lead">Prominent Persons of FOSS Nepal</p>
+      </section>
+
+      <section id="communities">
+        <div class="page-header">
+          <h1>Communities</h1>
+        </div>
+        <p class="lead">Communities of FOSS Nepal</p>
+      </section>
+    </div>
+  </div>
+</div>

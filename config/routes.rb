@@ -1,8 +1,17 @@
 NewFoss::Application.routes.draw do
+  resources :users
+
+  resources :categories, :except => [:index, :show]
+  resources :forums, :except => :index do
+    resources :topics, :shallow => true, :except => :index do
+      resources :posts, :shallow => true, :except => [:index, :show]
+    end
+  end
+  
   root to: 'static_pages#home'
-
   match '/about',   to: 'static_pages#about'
-
+  match '/forums' , to: 'categories#index'
+  match '/signup',  to: 'users#new'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

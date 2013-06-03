@@ -31,6 +31,7 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-sass (2.1.0.0)
     builder (3.0.4)
     capybara (1.1.2)
@@ -53,7 +54,13 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     ffi (1.8.1)
+    forum_monster (1.0.4)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -65,7 +72,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    multi_json (1.7.4)
+    multi_json (1.7.5)
     nokogiri (1.5.9)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -142,9 +149,12 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.5.0)
+  bcrypt-ruby (= 3.0.1)
   bootstrap-sass (= 2.1)
   capybara (= 1.1.2)
   coffee-rails (= 3.2.2)
+  factory_girl_rails (= 4.1.0)
+  forum_monster
   jquery-rails (= 2.0.2)
   pg (= 0.12.2)
   rails (= 3.2.13)

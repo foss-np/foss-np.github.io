@@ -6,23 +6,31 @@
   </div>
 </header>
 
-<div class="forum">
-	<% if signed_in? %>
- 	 <li><%= link_to "Users", users_path %></li>
-  	<li id="fat-menu" class="dropdown">
-   	 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-   	   Account <b class="caret"></b>
-   	 </a>
-   	 <ul class="dropdown-menu">
-    	  <li><%= link_to "Profile", current_user %></li>
-    	  <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-    	  <li class="divider"></li>
-    	  <li>
-    	    <%= link_to "Sign out", signout_path, method: "delete" %>
-    	  </li>
-    	</ul>
- 	 </li>
-	<% else %>
-  	<p class="lead">Please <%= link_to "Sign in", signin_path %> or <%= link_to "Create a new account", signup_path %>.</p>
-	<% end %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+          <% if signed_in? %>
+            <% if current_user.admin?%>
+ 	            <li><%= link_to "Users", users_path %></li>
+            <% end %>
+  	        <li id="fat-menu" class="dropdown">
+   	          <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Account <b class="caret"></b></a>
+   	          <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+    	         <li><%= link_to "Profile", current_user %></li>
+    	         <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+    	         <li class="divider"></li>
+    	         <li>
+    	           <%= link_to "Sign out", signout_path, method: "delete" %>
+    	         </li>
+    	       </ul>
+ 	          </li>
+	       <% else %>
+  	       <h4>Please <%= link_to "Sign in", signin_path %> or <%= link_to "Create a new account", signup_path %>.</h4>
+	       <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </div>

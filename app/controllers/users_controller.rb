@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_filter :signed_in_user, only: [:index, :edit, :update, :destroy, :alter_role]
   before_filter :correct_user,   only: [:edit, :update]
-  before_filter :admin_user,     only: :destroy
+  before_filter :admin_user,     only: [:index, :destroy, :alter_role]
   def show
     @user = User.find(params[:id])
   end
@@ -41,6 +41,13 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
+    redirect_to users_url
+  end
+
+  def alter_role
+    user = User.find(params[:id])
+    user.toggle!(:admin)
+    flash[:success] = "User Role altered."
     redirect_to users_url
   end
 

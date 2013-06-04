@@ -1,4 +1,6 @@
-class CategoriesController < ApplicationController  
+class CategoriesController < ApplicationController
+  before_filter :signed_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :admin_user,     only: [:new, :create, :edit, :update, :destroy]  
   def index
     @categories = Category.all
   end
@@ -39,4 +41,15 @@ class CategoriesController < ApplicationController
       redirect_to forums_url
     end
   end
+  
+  private
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
 end

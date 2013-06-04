@@ -1,4 +1,6 @@
-class PostsController < ApplicationController    
+class PostsController < ApplicationController
+  before_filter :signed_in_user, only: [ :edit, :update, :destroy]
+  before_filter :admin_user,     only: [ :edit, :update, :destroy]    
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
@@ -53,4 +55,15 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  private
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
+    end
 end

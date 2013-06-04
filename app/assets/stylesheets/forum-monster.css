@@ -12,8 +12,8 @@
 /* Form Fields & Labels
 --------------------------------------------------------------------------------------------------*/
 .module .fieldset { width:100%; }
-.module .fieldset .indent { width:16em; }
-.module .fieldset .label { font-weight:bold; text-align:right; display:block; float:left; padding:6px 0px 2px 1em; }
+.module .fieldset .indent { width:16em; background-color:#fff;}
+.module .fieldset .label { font-weight:bold; text-align:right; display:block; float:left; padding:6px 0px 2px 1em; color: #000;}
 .module .fieldset .label small { font-weight:normal; }
 .module .fieldset .input { padding:.2em 1em; display:block; float:left; }
 

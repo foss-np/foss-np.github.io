@@ -1,5 +1,10 @@
 NewFoss::Application.routes.draw do
-  resources :users
+  resources :users do
+     member do
+       get :alter_role
+       put :alter_role
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :categories, :except => [:index, :show]

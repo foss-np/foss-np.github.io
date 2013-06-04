@@ -18,7 +18,7 @@
       <tr>
         <td class="post_author" rowspan="2">
           <span class="name"><%= post.user.username %></span>
-          <span class="avatar"><%= image_tag 'rails.png' %><!-- This space reserved for Avatar --></span>
+          <span class="avatar"><%= gravatar_for post.user%></span>
           <span class="info smaller">
             Posts <%= post.user.posts.size %><br />
             Registered <%= post.user.created_at.to_s(:joined) %><br />
@@ -30,9 +30,10 @@
             <span class="right controls">
               <%= link_to "Reply", new_topic_post_path(@topic) %>
               <%= link_to "Quote", new_topic_post_path(@topic, :quote => post) %>
-              <if current_user.admin? %>
+              <%if current_user.admin? %>
                 <%= link_to "Edit", edit_post_path(post) %>
                 <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
+              <%end%>
             </span>
           <%end%>
         </td>

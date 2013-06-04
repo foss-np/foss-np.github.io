@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
+gem "rinku", :require => 'rails_rinku'
 gem 'forum_monster'
 
 group :development, :test do

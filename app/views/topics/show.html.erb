@@ -33,7 +33,6 @@
               <if current_user.admin? %>
                 <%= link_to "Edit", edit_post_path(post) %>
                 <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
-              <% end %>
             </span>
           <%end%>
         </td>

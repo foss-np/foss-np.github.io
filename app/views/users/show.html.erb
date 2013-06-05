@@ -1,11 +1,32 @@
 <% provide(:title, @user.username) %>
+<%= render 'layouts/forum' %>
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.username %>
+        <%= @user.username %></br>
+        <h6>Registered <%= @user.created_at.to_s(:joined) %></h6>
       </h1>
     </section>
   </aside>
 </div>
+<table class="table table-striped">
+  <% @user.posts.each do |post|%>
+  	<caption><%= @user.username %> Posts</caption>
+    <thead>
+			<tr>
+				<th>Posted <%= post.created_at %> in
+          <%= link_to "Topic", topic_path(post.topic_id) %> of <%= link_to "Forum", forum_path(post.forum_id) %>
+        </th>
+			</tr>
+		</thead>
+		<tbody>
+      <tr>
+        <td>
+          <%= post.body.bbcode_to_html().html_safe %>
+        </td>
+      </tr>
+    </tbody>
+  <%end%>
+</table>

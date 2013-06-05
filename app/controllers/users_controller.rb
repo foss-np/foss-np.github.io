@@ -11,7 +11,11 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user = User.new
+    if signed_in?
+      redirect_to(root_path)
+    else
+  	 @user = User.new
+    end
   end
 
   def create
@@ -50,22 +54,4 @@ class UsersController < ApplicationController
     flash[:success] = "User Role altered."
     redirect_to users_url
   end
-
-  private
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
-
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user?(@user)
-    end
-
-    def admin_user
-      redirect_to(root_path) unless current_user.admin?
-    end
 end

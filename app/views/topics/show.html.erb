@@ -30,7 +30,7 @@
             <span class="right controls">
               <%= link_to "Reply", new_topic_post_path(@topic) %>
               <%= link_to "Quote", new_topic_post_path(@topic, :quote => post) %>
-              <%if current_user.admin? %>
+              <%if current_user?(post.user) || current_user.admin? %>
                 <%= link_to "Edit", edit_post_path(post) %>
                 <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
               <%end%>
@@ -40,7 +40,7 @@
       </tr>
       <tr>
         <td class="post_body">
-          <%= simple_format(auto_link(post.body)) %>
+          <%= post.body.bbcode_to_html().html_safe %>
         </td>
       </tr>
       <% end %>

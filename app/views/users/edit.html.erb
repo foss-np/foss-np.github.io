@@ -1,4 +1,5 @@
-<% provide(:title, "Edit user") %> 
+<% provide(:title, "Edit user") %>
+<%= render 'layouts/forum' %>
 <h1>Update your profile</h1>
 
 <div class="row">
@@ -22,6 +23,6 @@
     <% end %>
 
     <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
+    <%= link_to "Change", "http://gravatar.com/emails", :target => "_blank" %>
   </div>
 </div>

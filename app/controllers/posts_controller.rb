@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_filter :signed_in_user, only: [ :new, :create, :edit, :update, :destroy]
-  before_filter :admin_user,     only: [ :edit, :update, :destroy]    
+  before_filter :current_user,   only: [:edit, :update, :destroy]
+  before_filter :admin_user,   only: [:edit, :update, :destroy]   
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
@@ -8,7 +9,7 @@ class PostsController < ApplicationController
     if params[:quote]
       quote_post = Post.find(params[:quote])
       if quote_post
-        @post.body = quote_post.body
+        @post.body = "[quote]#{quote_post.body}[/quote]"
       end
     end
   end
@@ -55,15 +56,4 @@ class PostsController < ApplicationController
       end
     end
   end
-
-  private
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
-    def admin_user
-      redirect_to(root_path) unless current_user.admin?
-    end
 end

@@ -8,7 +8,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem "rinku", :require => 'rails_rinku'
 gem 'forum_monster'
-gem 'bb-ruby', :require => 'bb-ruby'
+gem 'bb-ruby'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

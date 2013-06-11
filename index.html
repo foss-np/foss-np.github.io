@@ -38,6 +38,7 @@
 					<th>Repository description</th>
 					<th>Contributors</th>
 					<th>Repository Location</th>
+					<th>Open Issues</th>
 				</tr>
 			</thead>
 			<tbody ng-controller="mainCtrl">
@@ -45,7 +46,8 @@
 					<td>{{repo.name}}</td>
 					<td>{{repo.description}}</td>
 					<td>#</td>
-					<td>#</td>
+					<td><a href="{{repo.url}}">{{repo.url}}</a></td>
+                    <td><a href="https://github.com/foss-np/{{repo.name}}/issues">{{repo.open_issues}}</a></td>
       			</tr>
     		</tbody>
 		</table>

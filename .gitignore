@@ -1,4 +1,5 @@
 # Ignore all logfiles and tempfiles.
+nbproject
 /log/*.log
 /tmp
 
@@ -9,3 +10,4 @@ doc/
 .project
 .DS_Store
 .idea
+/nbproject/private/

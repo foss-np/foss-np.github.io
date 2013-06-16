@@ -181,8 +181,8 @@ hr.soften {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(fossnepal-pattern.png) repeat center center;
-  opacity: .4;
+  background: url(fossnepal-logo.png) repeat center center;
+  opacity: .05;
 }
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -198,7 +198,7 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
 /* Masthead (docs home)
 ------------------------- */
 .masthead {
-  padding: 70px 0 80px;
+  padding: 0 0 10px;
   margin-bottom: 0;
   color: #fff;
 }

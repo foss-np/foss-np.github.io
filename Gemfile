@@ -9,6 +9,10 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem "rinku", :require => 'rails_rinku'
 gem 'forum_monster'
 gem 'bb-ruby'
+gem 'metamagic'
+gem 'gretel'
+gem "friendly_id"
+gem 'dynamic_sitemaps'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

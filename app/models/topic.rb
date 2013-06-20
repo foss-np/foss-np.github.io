@@ -24,6 +24,9 @@ class Topic < ActiveRecord::Base
   # Accessors
   attr_accessor :body
   attr_accessible :title, :body, :sticky, :locked
+
+  extend FriendlyId
+  friendly_id :title
   
   # Validations
   validates :title,   :presence => true

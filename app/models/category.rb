@@ -17,6 +17,9 @@ class Category < ActiveRecord::Base
   
   # Accessors
   attr_accessible :title, :state, :position, :category_id
+
+  extend FriendlyId
+  friendly_id :title
   
   # Scopes
   default_scope :order => 'position ASC'

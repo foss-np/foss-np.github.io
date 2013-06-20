@@ -17,7 +17,7 @@
       <% @topic.posts.each do |post| %>
       <tr>
         <td class="post_author" rowspan="2">
-          <span class="name"><%= post.user.username %></span>
+          <span class="name"><%= link_to post.user.username, user_path(User.find_by_username(post.user.username)) %></span>
           <span class="avatar"><%= gravatar_for post.user%></span>
           <span class="info smaller">
             Posts <%= post.user.posts.size %><br />
@@ -28,11 +28,15 @@
           <span class="left post_date smaller">Posted <%= post.created_at %></span>
           <% if signed_in? %>
             <span class="right controls">
-              <%= link_to "Reply", new_topic_post_path(@topic) %>
-              <%= link_to "Quote", new_topic_post_path(@topic, :quote => post) %>
-              <%if current_user.admin? %>
-                <%= link_to "Edit", edit_post_path(post) %>
-                <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
+              <% if @topic.locked? %>
+                <span class="info smaller">This topic is locked by admin.</span>
+              <% else %>
+                <%= link_to "Reply", new_topic_post_path(@topic) %>
+                <%= link_to "Quote", new_topic_post_path(@topic, :quote => post) %>
+                <%if current_user.admin? %>
+                  <%= link_to "Edit", edit_post_path(post) %>
+                  <%= link_to "Delete", post, :confirm => "Are you sure?", :method => :delete %>
+                <% end %>
               <%end%>
             </span>
           <%end%>
@@ -40,7 +44,7 @@
       </tr>
       <tr>
         <td class="post_body">
-          <%= post.body.bbcode_to_html().html_safe %>
+          <%= simple_format(post.body) %>
         </td>
       </tr>
       <% end %>

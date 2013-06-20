@@ -25,7 +25,7 @@
         </tr>
         <% category.forums.each do |forum| %>
         <tr>
-          <td class="icon"><%= image_tag 'rails.png' %></td>
+          <td class="icon"><%= image_tag 'forum-logo.png' %></td>
           <td class="description">
             <%= link_to forum.title, forum_path(forum) %><br />
             <span class="smaller"><%= forum.description %></span><br />
@@ -35,7 +35,7 @@
           <td class="last_post smaller">
             <% if forum.posts.size > 0 %>
               <%= forum.posts.last.created_at %><br />
-              <%= forum.posts.last.user.username %>
+              <%= link_to forum.posts.last.user.username, user_path(User.find_by_username(forum.posts.last.user.username)) %>
             <% else %>
               No Topics / Posts
             <% end %>

@@ -8,6 +8,7 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.username %></br>
+        <%= @user.email %></br>
         <h6>Registered <%= @user.created_at.to_s(:joined) %></h6>
       </h1>
     </section>
@@ -19,14 +20,14 @@
     <thead>
 			<tr>
 				<th>Posted <%= post.created_at %> in
-          <%= link_to "Topic", topic_path(post.topic_id) %> of <%= link_to "Forum", forum_path(post.forum_id) %>
+          <%= link_to Topic.find(post.topic_id).title, topic_path(Topic.find(post.topic_id).title) %> of <%= link_to Forum.find(post.forum_id).title, forum_path(Forum.find(post.forum_id).title) %>
         </th>
 			</tr>
 		</thead>
 		<tbody>
       <tr>
         <td>
-          <%= post.body.bbcode_to_html().html_safe %>
+          <%=simple_format(post.body)%>
         </td>
       </tr>
     </tbody>

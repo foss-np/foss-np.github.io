@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
+
 
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1'
@@ -8,7 +10,6 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem "rinku", :require => 'rails_rinku'
 gem 'forum_monster'
-gem 'bb-ruby'
 gem 'metamagic'
 gem 'gretel'
 gem "friendly_id"
@@ -37,4 +38,5 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+  gem 'unicorn'
 end

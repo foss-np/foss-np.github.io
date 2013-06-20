@@ -23,16 +23,16 @@
       </tr>
       <% @forum.topics.each do |topic| %>
       <tr>
-        <td class="icon"><%= image_tag 'rails.png' %></td>
+        <td class="icon"><%= image_tag 'forum-logo.png' %></td>
         <td class="description">
           <%= link_to topic.title, topic_path(topic) %><br />
-          <span class="smaller">by <%= topic.user.username %></span>
+          <span class="smaller">by <%= link_to topic.user.username, user_path(User.find_by_username(topic.user.username)) %></span>
         </td>
         <td class="counts smaller"><%= topic.posts.size - 1 %></td>
         <td class="counts smaller"><%= topic.hits %></td>
         <td class="last_post smaller">
           <%= topic.posts.last.created_at %><br />
-          by <%= topic.posts.last.user.username %>
+          by <%= link_to topic.posts.last.user.username, user_path(topic.posts.last.user.username) %>
         </td>
       </tr>
       <% end %>

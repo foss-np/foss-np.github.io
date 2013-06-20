@@ -42,7 +42,7 @@ table .description { width:55%; text-align:left; padding-left:20px; }
 --------------------------------------------------------------------------------------------------*/
 table .post_author { padding-left:15px; vertical-align:top !important; }
 table .post_author .name { font-size:1.5em; display:block; margin-bottom:5px; }
-table .post_author .name a { margin-left:-20px; }
+table .post_author .name a { margin-left: auto; }
 table .post_author .info { display:block; margin:5px 0; }
 table .post_body { width:80%; padding:10px 10px 30px 10px; border-bottom:0px; }
 

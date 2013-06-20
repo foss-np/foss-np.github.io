@@ -24,6 +24,9 @@ class Forum < ActiveRecord::Base
   
   # Accessors
   attr_accessible :title, :description, :state, :position, :category_id
+
+  extend FriendlyId
+  friendly_id :title
   
   # Scopes
   default_scope :order => 'position ASC'

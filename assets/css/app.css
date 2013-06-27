@@ -4,10 +4,6 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  padding-top: 60px;
-}
-
 section {
   overflow: auto;
 }
@@ -22,8 +18,12 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+  color: #fff;
 }
 
+.center p {
+  color: #fff;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,14 +37,6 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #999;
-}
 
 p {
   font-size: 1.1em;
@@ -73,18 +65,20 @@ p {
 /* footer */
 
 footer {
+  background-color: #F5F5F5;
+  text-align: center;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: #000;
 }
 
 footer a {
-  color: #555;
+  color: #0088cc;
 }  
 
 footer a:hover { 
-  color: #222;
+  color: #005580;
 }
 
 footer small {
@@ -102,5 +96,13 @@ footer ul li {
 }
 
 .hero-unit{
-  padding: 10px;
+  background-color: #311640;
+}
+
+.alert-info{
+  color: #000;
+}
+
+.alert-info h4{
+  color: #000;
 }

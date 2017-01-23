@@ -58,7 +58,7 @@ p {
 }
 
 #logo:hover {
-  color: #999;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -96,7 +96,7 @@ footer ul li {
 }
 
 .hero-unit{
-  background-color: #311640;
+  background-color: #3AB5F6;
 }
 
 .alert-info{

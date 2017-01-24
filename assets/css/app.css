@@ -49,7 +49,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #000;
+  color: #999;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -58,7 +58,7 @@ p {
 }
 
 #logo:hover {
-  color: #999;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -96,7 +96,7 @@ footer ul li {
 }
 
 .hero-unit{
-  background-color: #311640;
+  background-color: #3AB5F6;
 }
 
 .alert-info{
